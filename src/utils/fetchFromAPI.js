@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const BASE_URL = 'https://youtube.googleapis.com/youtube/v3';
+export const BASE_URL = "https://youtube.googleapis.com/youtube/v3"; 
 
 const accessToken = localStorage.getItem('token')
 
@@ -9,7 +9,7 @@ const options = {
     maxResults: 5,
   },
   headers: {
-    Authorization: `Bearer + ${accessToken}`,
+    Authorization: `Bearer  ${accessToken}`,
     Accept: 'application/json'
   },
 };

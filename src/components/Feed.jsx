@@ -4,14 +4,14 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 import Videos from "./Videos";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 
 const Feed = ({user, signOut}) => {
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=5&key=[AIzaSyBiPLq1IsOOR8gVjasepIHl_7gwEYjxQek]${selectedCategory}`).then((data) =>
+    fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=5&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>
       setVideos(data.items)
     );
   }, [selectedCategory]);
