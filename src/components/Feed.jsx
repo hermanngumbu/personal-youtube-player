@@ -11,7 +11,7 @@ const Feed = ({user, signOut}) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=5&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>
+    fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>
       setVideos(data.items)
     );
   }, [selectedCategory]);
@@ -27,7 +27,7 @@ const Feed = ({user, signOut}) => {
     
       <Box
         sx={{
-          height: { sx: "auto", md: "92vh" },
+          height: { sx: "auto", md: "92vh" }, 
           borderRight: "1px solid #3d3d3D",
           px: { sx: 0, md: 2 },
         }}

@@ -35,18 +35,18 @@ const Sidebar = ({ selectedCategory, setSelectedCategory, user ,signOut}) => (
         <Box m={2} pt={3} sx={{ width: '100px' }}>
           <Grid container spacing={0.5}>
           <Grid item xs={6}>
-                <item>
+                <div>
                 <Avatar alt={user.title}  src={user.profileImg} loading="lazy" />
 
-                </item>
+                </div>
             </Grid>
             <Grid item xs={6}>
-                <item>
+                <div>
                 <Typography variant='h6' sx={{ color: pink[100] }}
                   align='justify' spacing={3}
                   gutterBottom>{user.name}
            </Typography>
-                </item>
+                </div>
             </Grid>
             
           </Grid>
