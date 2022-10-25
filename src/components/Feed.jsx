@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 // import SearchBar from "./SearchBar";
 
 const Feed = ({user, signOut}) => {
-  const [selectedCategory, setSelectedCategory] = useState("New");
+  const [selectedCategory, setSelectedCategory] = useState("Popular");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {

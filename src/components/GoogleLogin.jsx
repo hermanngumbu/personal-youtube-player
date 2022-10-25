@@ -25,7 +25,7 @@ const GoogleLogin = () => {
 
   useEffect(() => {
     const setAuth2 = async () => {
-      const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, "https://www.googleapis.com/auth/youtube");
+      const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, process.env.REACT_APP_SCOPE);
       if (auth2.isSignedIn.get()) {
         updateUser(auth2.currentUser.get());
       } else {
@@ -38,7 +38,7 @@ const GoogleLogin = () => {
   useEffect(() => {
     if (!user) {
       const setAuth2 = async () => {
-        const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, "https://www.googleapis.com/auth/youtube");
+        const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, process.env.REACT_APP_SCOPE);
         attachSignin(document.getElementById("customBtn"), auth2);
       };
       setAuth2();
@@ -55,7 +55,6 @@ const GoogleLogin = () => {
   const token = currentUser.xc.access_token
 
   localStorage.setItem('token', token)
-  console.log("user : ",currentUser)
   };
 
 
@@ -77,7 +76,6 @@ const GoogleLogin = () => {
     );
   }
 
-  // console.log(process.env.REACT_APP_CLIENT_ID)
 
   return (
     

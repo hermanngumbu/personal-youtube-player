@@ -1,12 +1,11 @@
 import React from "react";
 import { Stack, Box } from "@mui/material";
 
-import ChannelCard from './ChannelCard'
+// import ChannelCard from './ChannelCard'
 import VideoCard from "./VideoCard";
 import Loader from './Loader';
 
 const Videos = ({ videos, direction }) => {
-  console.log(videos);
 
   if(!videos?.length) return <Loader />;
 
@@ -16,6 +15,8 @@ const Videos = ({ videos, direction }) => {
       {videos.map((item, idx) => (
         <Box key={idx}>
           {item.id && <VideoCard video={item} /> }
+
+          {/* display channel */}
           {/* {item.snippet.channelId && <ChannelCard channelDetail={item.snippet} />} */}
         </Box>
       ))}

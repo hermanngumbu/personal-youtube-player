@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const BASE_URL = "https://youtube.googleapis.com/youtube/v3"; 
+export const BASE_URL = process.env.REACT_APP_URL; 
 
 const accessToken = localStorage.getItem('token')
 
