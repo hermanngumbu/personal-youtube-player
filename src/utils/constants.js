@@ -6,8 +6,7 @@ export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 
 export const categories = [
   { name: 'Popular', icon: <HomeIcon />, },
-  { name: 'My Channel', icon: <SubscriptionsIcon />, },
   { name: 'My Liked', icon: <ThumbUpIcon />, },
-
+  { name: 'My Channel', icon: <SubscriptionsIcon />, },
 ];
 

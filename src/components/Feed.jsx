@@ -11,9 +11,17 @@ const Feed = ({user, signOut}) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>
-      setVideos(data.items)
-    );
+    if(selectedCategory === "Popular"){
+      fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>{
+        setVideos(data.items)
+      });
+    }
+    if(selectedCategory === "My Liked"){
+      fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&myRating=like&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>{
+        setVideos(data.items)
+      });
+    }
+  
   }, [selectedCategory]);
 
   return (

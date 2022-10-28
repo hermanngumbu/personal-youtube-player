@@ -6,7 +6,7 @@ const accessToken = localStorage.getItem('token')
 
 const options = {
   params: {
-    maxResults: 5,
+    maxResults: 60,
   },
   headers: {
     Authorization: `Bearer  ${accessToken}`,
