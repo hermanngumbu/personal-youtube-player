@@ -1,7 +1,9 @@
 # personal-youtube-player
 
 creation of a web application that allows to search and view videos online. 
+
 Overview : (https://github.com/facebook/create-react-app)
+
 Maquette : (https://www.figma.com/file/lb54afAu8N7PwCMDEgv7vp/MovApp?node-id=0%3A1)
 
 
@@ -16,7 +18,12 @@ ESLint et Prettier for the style of code.
 
 Runs the app in the development mode.\
 1. npm install 
-2. npm start 
+
+2. Create a Google API account here: (https://console.cloud.google.com/apis/api/youtube.googleapis.com)
+
+Get your accesstoken and Client ID and put it in an .env file
+
+3. npm start 
 
 
 
