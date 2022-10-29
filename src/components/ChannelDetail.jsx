@@ -12,16 +12,21 @@ const ChannelDetail = () => {
 
   const { id } = useParams();
 
+  console.log("Channel Id ", id)
+
   useEffect(() => {
     const fetchResults = async () => {
-      const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
+      const data = await fetchFromAPI(`search?part=snippet&id=${id}`);
 
       setChannelDetail(data?.items[0]);
 
-      const videosData = await fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`);
+      const videosData = await fetchFromAPI(`search?part=snippet&channelId=${id}&type=video&maxResults=45&key=${process.env.REACT_APP_API_KEY}`);
+      console.log("videosData ", videosData)
 
       setVideos(videosData?.items);
     };
+
+    // `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&type=video&maxResults=45&key=${key}`
 
     fetchResults();
   }, [id]);

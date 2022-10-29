@@ -18,7 +18,7 @@ const App = () =>{
        <Route path='/' exact element={ <GoogleLogin />} /> 
         <Route path="/Feed" element={<Feed />} />
         <Route path="/video/:id" element={<VideoDetail />} />
-          <Route path="/video/:id" element={<ChannelDetail />} />
+        <Route path="/video/:id" element={<ChannelDetail />} />
         <Route path='/channel/:id' element={<ChannelDetail />} />
         <Route path='/search/:searchTerm' element={<SearchFeed />} />
        </Routes> 

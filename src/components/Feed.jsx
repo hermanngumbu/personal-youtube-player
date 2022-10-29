@@ -9,7 +9,7 @@ import Navbar from "./Navbar";
 const Feed = ({user, signOut}) => {
   const [selectedCategory, setSelectedCategory] = useState("Popular");
   const [videos, setVideos] = useState([]);
-
+  
   useEffect(() => {
     if(selectedCategory === "Popular"){
       fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>{
@@ -18,6 +18,12 @@ const Feed = ({user, signOut}) => {
     }
     if(selectedCategory === "My Liked"){
       fetchFromAPI(`videos?part=snippet%2CcontentDetails%2Cstatistics&myRating=like&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>{
+        setVideos(data.items)
+      });
+    }
+
+    if (selectedCategory === "My Channel") {
+      fetchFromAPI(`subscriptions?part=snippet%2CcontentDetails&mine=true&key=${process.env.REACT_APP_API_KEY}${selectedCategory}`).then((data) =>{
         setVideos(data.items)
       });
     }
